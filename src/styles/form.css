@@ -1,0 +1,64 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(C:\Users\bhatt\OneDrive\Desktop\E-Commerce-project-github\E-commerce-website\src\assets\Loginbg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+    background: linear-gradient(135deg, rgba(227, 204, 253, 0.9), rgba(174, 156, 251, 0.9));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+form label {
+    font-size: 18px;
+    display: block;
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+form input {
+    width: 85%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+form input[type="submit"] {
+    width: auto;
+    background: linear-gradient(135deg, #b199e9, #c491f8);
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.35);
+    transition: all 0.25s ease;
+    padding: 10px 10%;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+  background: linear-gradient(135deg, #9e7efc, #c297f0);
+  color: white;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.45);
+  cursor: pointer;
+}
+
+.form-lower-text{
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+.lp{
+    text-align: center;
+    margin-bottom: 50px;
+}

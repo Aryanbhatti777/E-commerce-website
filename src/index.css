@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 24px;
+  font-variant: small-caps;
+}
+
+button,
+.btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(135deg, #b199e9, #c491f8);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.35);
+  transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+  background: linear-gradient(135deg, #9e7efc, #c297f0);
+  color: white;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.45);
+}

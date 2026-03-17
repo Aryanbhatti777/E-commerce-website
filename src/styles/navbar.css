@@ -1,0 +1,139 @@
+header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  background: linear-gradient(135deg,
+      rgba(243, 232, 255, 0.9),
+      rgba(174, 156, 251, 0.9));
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  width: auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul .searchbar {
+  width: 260px;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+nav ul li input {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #bbb;
+  outline: none;
+
+}
+
+.user {
+  display: flex;
+  gap: 5px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(135deg, #b199e9, #c491f8);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.35);
+  transition: all 0.25s ease;
+}
+
+.user:hover {
+  background: linear-gradient(135deg, #9e7efc, #c297f0);
+  color: white;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.45);
+}
+
+.user span {
+  transition: color 0.25s ease;
+}
+
+.user span:hover {
+  color: white;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart span {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: rgb(0, 0, 0);
+  color: white;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: linear-gradient(135deg,
+      rgba(243, 232, 255, 0.9),
+      rgba(174, 156, 251, 0.9));
+  min-width: 200px;
+  padding: 10px 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-content a:hover {
+  background: #f3f3f3;
+}
+
+/* show dropdown when hovering parent */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
