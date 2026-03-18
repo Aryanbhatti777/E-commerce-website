@@ -7,6 +7,7 @@ const CategoryProducts = () => {
   const [products, setProducts] = useState([]);
   const [selectedSection, setSelectedSection] = useState("");
   const [loading, setLoading] = useState(false);
+  let [cartitem, setCartItem] = useState([])
 
   const categorySections = {
     electronics: [
@@ -44,7 +45,9 @@ const CategoryProducts = () => {
 
     setLoading(false);
   };
-  console.log("slug:", slug);
+
+  const addtocart = () => {
+  }
 
   return (
     <div className="cp">
@@ -77,7 +80,7 @@ const CategoryProducts = () => {
               <h3>{pro.title}</h3>
               <p>${pro.price}</p>
               <p>{pro.description}</p>
-              <button className=".btn">Add</button>
+              <button className=".btn" onClick={addtocart()}>Add</button>
             </div>
           ))}
         </div>
