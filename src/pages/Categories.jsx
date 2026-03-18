@@ -22,6 +22,7 @@ const Categories = () => {
         ))}
       </div>
     </section>
+    
   );
 };
 
