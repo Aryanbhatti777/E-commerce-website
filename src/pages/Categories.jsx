@@ -1,29 +1,35 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/home.css";
-import categories from "../services/CategoriesData";
 
-const Categories = () => {
-  const Navigate = useNavigate();
+const Home = () => {
+  const navigate = useNavigate();
+
+  const categories = [
+    { name: "Electronics", slug: "electronics" },
+    { name: "Fashion", slug: "fashion" },
+    { name: "Beauty", slug: "beauty" },
+    { name: "Home & Living", slug: "home" },
+    { name: "Groceries", slug: "groceries" },
+    { name: "Sports", slug: "sports" }
+  ];
 
   return (
-    <section className="categories-page">
-      <h2>Shop by Categories</h2>
+    <div className="categories-page">
+      <h2>Shop by Category</h2>
 
-      <div className="categories-grid">
+      <div className="categories-container">
         {categories.map((cat) => (
-          <div className="category-card" key={cat.id}>
+          <div
+            key={cat.slug}
+            onClick={() => navigate(`/category/${cat.slug}`)}
+            className="category-card"
+          >
             <h3>{cat.name}</h3>
-            <p>{cat.subcategories.length} sections</p>
-            <button onClick={() => Navigate(`/category/${cat.slug}`)}>
-              Explore
-            </button>
           </div>
         ))}
       </div>
-    </section>
-    
+    </div>
   );
 };
 
-export default Categories;
+export default Home;
