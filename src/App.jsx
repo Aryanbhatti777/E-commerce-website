@@ -11,6 +11,8 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Layout from './components/Layout'
 import CategoryProducts from "./pages/CategoryProducts";
+import Checkout from './pages/Checkout'
+import Orders from './pages/Orders'
 
 const App = () => {
   return (
@@ -24,6 +26,8 @@ const App = () => {
         <Route path='contact' element={<Contact />} />
         <Route path='about' element={<About />} />
         <Route path="/category/:slug" element={<CategoryProducts />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orders" element={<Orders />} />
       </Route>
 
       {/* Pages without navbar */}

@@ -4,31 +4,56 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
 
-  let [count, setCount] = useState(1)
-  let Navigate = useNavigate();
+  useEffect(() => {
+    const updateCartCount = () => {
+      const savedCart = localStorage.getItem("cart");
+      const cart = savedCart ? JSON.parse(savedCart) : [];
+      setCount(cart.length);
+    };
 
-  let Logout = () => {
-    localStorage.removeItem("user")
-    Navigate("/login")
-  }
+    updateCartCount();
+
+    window.addEventListener("cartUpdated", updateCartCount);
+
+    return () => {
+      window.removeEventListener("cartUpdated", updateCartCount);
+    };
+  }, []);
+
+  const Logout = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
+
   return (
     <header>
       <nav>
         <h1 className="logo">My Store</h1>
 
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
 
           <li className="searchbar">
-
             <input type="search" placeholder="Search products..." />
           </li>
 
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/categories">Categories</Link></li>
-          <li><Link to="/about">About Us</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li>
+            <Link to="/products">Products</Link>
+          </li>
+          <li>
+            <Link to="/categories">Categories</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
 
           <li className="cart">
             <Link to="/cart">
@@ -47,16 +72,20 @@ const NavBar = () => {
                 <div className="dropdown-content">
                   <Link to="/profile">My Profile</Link>
                   <Link to="/orders">My Orders</Link>
-                  <Link to="/login" onClick={Logout}>Logout</Link>
+                  <Link to="/login" onClick={Logout}>
+                    Logout
+                  </Link>
                 </div>
               </div>
             ) : (
-              <a onClick={() => Navigate("/login")}>
-                <span>Login</span>
-              </a>
+              <span
+                style={{ cursor: "pointer" }}
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </span>
             )}
           </li>
-
         </ul>
       </nav>
     </header>

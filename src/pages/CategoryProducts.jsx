@@ -7,7 +7,6 @@ const CategoryProducts = () => {
   const [products, setProducts] = useState([]);
   const [selectedSection, setSelectedSection] = useState("");
   const [loading, setLoading] = useState(false);
-  let [cartitem, setCartItem] = useState([])
 
   const categorySections = {
     electronics: [
@@ -32,8 +31,8 @@ const CategoryProducts = () => {
       { name: "Groceries", slug: "groceries" }
     ],
     sports: [
-  { name: "Sports Accessories", slug: "sports-accessories" }
-]
+      { name: "Sports Accessories", slug: "sports-accessories" }
+    ]
   };
 
   const handleSectionClick = async (sectionSlug) => {
@@ -46,15 +45,22 @@ const CategoryProducts = () => {
     setLoading(false);
   };
 
-  const addtocart = () => {
-  }
+  const addtocart = (pro) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push(pro); // every click increases cart count
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.dispatchEvent(new Event("cartUpdated"));
+
+    alert("Item added to cart");
+  };
 
   return (
     <div className="cp">
-     
-
       <div className="sections-container">
-         <h2>{slug} Sections</h2>
+        <h2>{slug} Sections</h2>
+
         {categorySections[slug]?.map((section) => (
           <button
             key={section.slug}
@@ -67,20 +73,21 @@ const CategoryProducts = () => {
 
       <hr />
 
-      
-
       {loading ? (
         <p>Loading...</p>
       ) : (
         <div className="products-container">
           <h2>{selectedSection && `${selectedSection} Products`}</h2>
+
           {products.map((pro) => (
             <div key={pro.id} className="product-card">
               <img src={pro.thumbnail} alt={pro.title} width="150" />
               <h3>{pro.title}</h3>
               <p>${pro.price}</p>
               <p>{pro.description}</p>
-              <button className=".btn" onClick={addtocart()}>Add</button>
+              <button className="btn" onClick={() => addtocart(pro)}>
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>
