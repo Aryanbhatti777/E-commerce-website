@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProductsBySection } from "../services/Api";
+import "../styles/home.css";
 
 const CategoryProducts = () => {
   const { slug } = useParams();

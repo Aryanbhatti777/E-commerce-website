@@ -113,53 +113,208 @@ body {
   font-weight: 600;
 }
 
-.cp{
+.cp {
   display: flex;
-  align-items: center;
-  height: 90vh;
+  min-height: 100vh;  /* ✅ allow full page growth */
   margin-top: 68px;
-  /* flex-direction: row; */
+  align-items: flex-start; /* better alignment */
+}
+.sections-container {
+  width: 260px;
+  min-width: 260px;
+  background: linear-gradient(180deg, #e9d8fd, #d8b4fe);
+  border-radius: 20px;
+  padding: 25px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  .sections-container {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
 }
 
-.sections-container{
+.sections-container h2 {
+  font-size: 24px;
+  color: #4c1d95;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.sections-container button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: white;
+  color: #5b21b6;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sections-container button:hover {
+  background: linear-gradient(135deg, #8b5cf6, #c084fc);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.products-container {
+  height: auto;
+}
+
+.products-container h2 {
+  grid-column: 1 / -1;
+  font-size: 28px;
+  color: #2d1b4e;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  padding-bottom: 60px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  justify-content: left;
   align-items: center;
-  width: 20%;
-  height: 100%;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(0deg, #e0d4f9, #ce9aff);
+  text-align: center;
 }
 
-.products-container{
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
-  /* justify-content:center; */
-  align-items: center;
-  width: auto;
-  flex-wrap:wrap;
-  height: 90%;
-  margin-top: 68px;
-  margin-left: 25%;
+.product-card:hover {
+  transform: translateY(-8px);
 }
 
-.product-card{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 250px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  padding: 20px;
-  border-radius: 20px;
-  height: auto;
-  gap: 10px;
+.product-card img {
+  width: 100%;
+  max-width: 170px;
+  height: 170px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #222;
+  margin-bottom: 10px;
+  min-height: 48px;
+}
+
+.product-card p:first-of-type {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6d28d9;
+  margin-bottom: 10px;
+}
+
+.product-card p:last-of-type {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.product-card .btn {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.product-card .btn:hover {
+  transform: scale(1.03);
+}
+
+.cp hr {
+  display: none;
+}
+
+.cp > p {
+  font-size: 20px;
+  color: #666;
+  margin-top: 50px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sections-container {
+    width: 220px;
+    min-width: 220px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cp {
+    flex-direction: column;
+    padding: 20px 15px;
+  }
+
+  .sections-container {
+    width: 100%;
+    min-width: 100%;
+    position: static;
+  }
+
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  .products-container h2 {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .product-card img {
+    max-width: 150px;
+    height: 150px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .sections-container h2 {
+    font-size: 20px;
+  }
+
+  .sections-container button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+
+  .product-card h3 {
+    font-size: 16px;
+  }
+
+  .product-card p:first-of-type {
+    font-size: 16px;
+  }
+
+  .product-card p:last-of-type {
+    font-size: 13px;
+  }
 }
 
 .products-container h2 , .categories-container h2{
