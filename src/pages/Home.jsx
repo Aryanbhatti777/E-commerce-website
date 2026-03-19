@@ -1,7 +1,9 @@
 import Hero from './Hero';
 import Navbar from  '../components/Navbar'
-import Products from './Products';
+import Products from './FeaturedProducts';
 import Categories from './Categories';
+import FeaturedProducts from './FeaturedProducts';
+import Bestseller from './Bestseller';
 
 
 const Home = () => {
@@ -11,6 +13,8 @@ const Home = () => {
     <>
       <Hero />
       <Categories/>
+      <FeaturedProducts/>
+      <Bestseller/>
   
     </>
   )

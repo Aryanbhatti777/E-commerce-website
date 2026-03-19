@@ -55,6 +55,7 @@
 .categories-page h2 {
   text-align: center;
   margin-bottom: 30px;
+  margin-top: 90px;
   font-size: 32px;
   color: #5b21b6;
 }
@@ -159,4 +160,243 @@
 .products-container h2 , .categories-container h2{
   font-variant: small-caps;
   font-size: 26px;
+}
+
+.featured-products {
+  padding: 60px 8%;
+  background: #f9f6ff;
+}
+
+.featured-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-header h2 {
+  font-size: 2rem;
+  color: #2d1b4e;
+  margin-bottom: 10px;
+}
+
+.featured-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.featured-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+}
+
+.featured-img-box {
+  width: 100%;
+  height: 220px;
+  background: #f4efff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.featured-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.featured-info {
+  padding: 18px;
+}
+
+.featured-info span {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #8b5cf6;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.featured-info h3 {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 10px;
+  min-height: 48px;
+}
+
+.featured-info p {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 14px;
+}
+
+.featured-info button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.featured-info button:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-products {
+    padding: 40px 5%;
+  }
+
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bestseller-section {
+  padding: 60px 8%;
+  background: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: #2d1b4e;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+.bestseller-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.bestseller-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  border: 1px solid #f0e9ff;
+}
+
+.bestseller-card:hover {
+  transform: translateY(-8px);
+}
+
+.bestseller-img-box {
+  width: 100%;
+  height: 220px;
+  background: #f8f3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bestseller-img-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.bestseller-info {
+  padding: 18px;
+}
+
+.bestseller-info .category {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #8b5cf6;
+  margin-bottom: 8px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.bestseller-info h3 {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 10px;
+  min-height: 48px;
+}
+
+.bestseller-info .price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.bestseller-info .rating {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.bestseller-info button {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.bestseller-info button:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1024px) {
+  .bestseller-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bestseller-section {
+    padding: 40px 5%;
+  }
+
+  .bestseller-grid {
+    grid-template-columns: 1fr;
+  }
 }
