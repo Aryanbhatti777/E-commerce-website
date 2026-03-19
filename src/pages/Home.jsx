@@ -3,6 +3,7 @@ import Navbar from  '../components/Navbar'
 import Products from './Products';
 import Categories from './Categories';
 
+
 const Home = () => {
 
   
@@ -10,6 +11,7 @@ const Home = () => {
     <>
       <Hero />
       <Categories/>
+  
     </>
   )
 }
