@@ -4,6 +4,8 @@ import Products from './FeaturedProducts';
 import Categories from './Categories';
 import FeaturedProducts from './FeaturedProducts';
 import Bestseller from './Bestseller';
+import AboutUs from './About';
+import ContactUs from './Contact';
 
 
 const Home = () => {
@@ -15,6 +17,8 @@ const Home = () => {
       <Categories/>
       <FeaturedProducts/>
       <Bestseller/>
+      <AboutUs/>
+      <ContactUs/>
   
     </>
   )

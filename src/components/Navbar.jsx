@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [count, setCount] = useState(0);
+  const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -25,13 +26,22 @@ const NavBar = () => {
 
   const Logout = () => {
     localStorage.removeItem("user");
+    localStorage.removeItem("userstatus");
     navigate("/login");
+  };
+
+  const handleSearch = () => {
+    if (search.trim() !== "") {
+      navigate(`/products?search=${encodeURIComponent(search.trim())}`);
+    } else {
+      navigate("/products");
+    }
   };
 
   return (
     <header>
       <nav>
-        <h1 className="logo">My Store</h1>
+        <h1 className="logo">shopease</h1>
 
         <ul className="nav-links">
           <li>
@@ -39,7 +49,20 @@ const NavBar = () => {
           </li>
 
           <li className="searchbar">
-            <input type="search" placeholder="Search products..." />
+            <input
+              type="search"
+              placeholder="Search products..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSearch();
+                }
+              }}
+            />
+            <button className="search-btn" onClick={handleSearch}>
+              Search
+            </button>
           </li>
 
           <li>

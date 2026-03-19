@@ -14,9 +14,12 @@ import Checkout from './pages/Checkout'
 import Orders from './pages/Orders'
 import Profile from './pages/Profile'
 import Bestseller from './pages/Bestseller'
+import ScrollToTop from './components/Scrolltotop'
 
 const App = () => {
   return (
+    <>
+    <ScrollToTop/>
     <Routes>
       {/* Pages with navbar */}
       <Route path='/' element={<Layout/>}>
@@ -30,7 +33,7 @@ const App = () => {
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/profile" element={<Profile/>}/>
-        <Route path='bestseller' element={<Bestseller/>}/>
+        <Route path='/bestseller' element={<Bestseller/>}/>
       </Route>
 
       {/* Pages without navbar */}
@@ -38,6 +41,7 @@ const App = () => {
 
       <Route path='*' element={<div>404 Not Found</div>} />
     </Routes>
+    </>
   )
 }
 
