@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/home.css";
+
 
 const Checkout = () => {
   const navigate = useNavigate();
@@ -48,7 +50,7 @@ const Checkout = () => {
 
   return (
     <div style={{ maxWidth: "900px", margin: "40px auto", padding: "20px" }}>
-      <h1>Checkout</h1>
+      <h1 className="checkout">Checkout</h1>
 
       {checkoutItems.length === 0 ? (
         <p>No items available for checkout.</p>

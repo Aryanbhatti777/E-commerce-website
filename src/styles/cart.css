@@ -138,6 +138,7 @@
 @media (max-width: 768px) {
   .cart-page {
     padding: 25px 14px;
+    margin-top: 110px;
   }
 
   .carth {

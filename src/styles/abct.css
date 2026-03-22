@@ -87,6 +87,7 @@
 @media (max-width: 992px) {
   .about-container {
     grid-template-columns: 1fr;
+    margin-top: 110px;
   }
 
   .about-features {
@@ -223,6 +224,7 @@
 @media (max-width: 576px) {
   .contact-section {
     padding: 50px 5%;
+    margin-top: 110px;
   }
 
   .contact-left h2 {
